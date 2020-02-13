@@ -1,0 +1,21 @@
+.add-button-grid {
+    vertical-align: bottom;
+}
+
+.add-button {
+    vertical-align: bottom;
+}
+
+.MuiGrid-spacing-xs-3 > .MuiGrid-item {
+    align-self: flex-end;
+}
+
+.MuiGrid-spacing-xs-2 > .MuiGrid-item {
+    align-self: flex-start;
+}
+
+.MuiCardMedia-root {
+    height: 150%;
+    width: 100%;
+    padding-top: 75%;
+}
