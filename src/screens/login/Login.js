@@ -22,23 +22,17 @@ class Login extends Component {
             loggedIn: sessionStorage.getItem("access-token") == null ? false : true
         }
     }
-    inputUsernameChangeHandler = (e) => {
-        this.setState({
-            username: e.target.value
-        })
-    }
-    inputPasswordChangeHandler = (e) => {
-        this.setState({
-            password: e.target.value
-        })
-    }
+
+       
+
+    //Login Button Click
     loginClickHandler = () => {
         this.setState({ loginError: "dispNone" })
         this.state.username === "" ? this.setState({ usernameRequired: "dispBlock" }) : this.setState({ usernameRequired: "dispNone" });
         this.state.password === "" ? this.setState({ passwordRequired: "dispBlock" }) : this.setState({ passwordRequired: "dispNone" });
 
         if( this.state.username !== "" && this.state.password !== "" ) {
-            if(this.state.username === "admin" && this.state.password === "password" ) {
+            if(this.state.username === "admin" && this.state.password === "admin" ) {
                 sessionStorage.setItem("access-token", '8661035776.d0fcd39.39f63ab2f88d4f9c92b0862729ee2784');
                 this.props.history.push('/home');
             } else {
@@ -47,6 +41,23 @@ class Login extends Component {
         }
         
     }
+
+
+     //Input Password Change
+     inputPasswordChangeHandler = (e) => {
+        this.setState({
+            password: e.target.value
+        })
+    }
+
+    // Username change 
+    inputUsernameChangeHandler = (e) => {
+        this.setState({
+            username: e.target.value
+        })
+    }
+
+
     render() {
         return (
             <div>

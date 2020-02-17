@@ -50,21 +50,24 @@ class Home extends Component {
     
   }
 
+// Adding Search Functionality 
+onSearchHandler = event => {
+  console.log("onSearchHandler");
+  this.setState({ searchText: event.target.value });
+  if ( this.state.searchText == null || this.state.searchText.trim() === "" ) {
+    this.setState({userMediaDataFiltered: this.state.userMediaDataOrig});
+  } else {
+    var userMediaDataFiltered = this.state.userMediaDataOrig.filter( this.checkIfExist );
+    this.setState({userMediaDataFiltered: userMediaDataFiltered});
+  }
+}
+
+
   checkIfExist = (element) => {
     return element.caption.text.toUpperCase().split("#")[0].indexOf(this.state.searchText.toUpperCase()) > -1
   }
 
-  onSearchHandler = event => {
-    console.log("onSearchHandler");
-    this.setState({ searchText: event.target.value });
-    if ( this.state.searchText == null || this.state.searchText.trim() === "" ) {
-      this.setState({userMediaDataFiltered: this.state.userMediaDataOrig});
-    } else {
-      var userMediaDataFiltered = this.state.userMediaDataOrig.filter( this.checkIfExist );
-      this.setState({userMediaDataFiltered: userMediaDataFiltered});
-    }
-  }
-
+  
   render() {
     return (
       <div>

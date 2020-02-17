@@ -33,27 +33,28 @@ class Header extends Component {
                 }
             )
     }
-    menuOpenHandler = (event) => {
-        this.setState({ anchorEl: event.currentTarget });
-    }
-    menuCloseHandler = () => {
-        this.setState({ anchorEl : null });
-    }
+   
     menuMyAccountHandler = () => {
         this.menuCloseHandler();
         this.props.history.push('/profile');
     }
-
+    menuCloseHandler = () => {
+        this.setState({ anchorEl : null });
+    }
     logoutHandler = () => {
         sessionStorage.removeItem("access-token");
         this.menuCloseHandler();
         this.props.history.push('/login');
     }
-
     homePageOpenHandler = () => {
         this.props.history.push('/home');
     }
 
+    menuOpenHandler = (event) => {
+        this.setState({ anchorEl: event.currentTarget });
+    }
+   
+  
     render() {
         return (
             <div className="header">

@@ -58,25 +58,40 @@ class Profile extends Component {
       );  
     
   }
+
+  //Image open ViewModal
+  onOpenImageViewModal = () => {
+    this.setState({openImageViewModal: true})
+  }
+
+  
+
+  // Close Edit User
+  onCloseEditUserModal = () => {
+    this.setState({openEditUserModal: false})
+  }
+  
+
+
+  //Open Edit user 
   onOpenEditUserModal = () => {
     this.setState({openEditUserModal: true})
   }
 
-  onCloseEditUserModal = () => {
-    this.setState({openEditUserModal: false})
-  }
+
+
+  //Edit User Submit
   onSubmitEditUserModal  = (name) => {
     this.setState({updateUserFullName: name})
     this.onCloseEditUserModal();
   }
 
-  onOpenImageViewModal = () => {
-    this.setState({openImageViewModal: true})
-  }
-
-  onCloseImageViewModal = () => {
-    this.setState({openImageViewModal: false})
-  }
+  
+//Closing Image 
+onCloseImageViewModal = () => {
+  this.setState({openImageViewModal: false})
+}
+  
 
 
   render() {

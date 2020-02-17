@@ -18,12 +18,6 @@ class EditUserNameModal  extends Component {
         }
 
     }
-    onEditFullNameType = (e) => {
-        this.setState({
-            typedFullname: e.target.value
-        })
-    }
-
     onSubmitClickHandler = () => {
         if (this.state.typedFullname == null || this.state.typedFullname.trim() === "") {
             this.setState({
@@ -38,6 +32,13 @@ class EditUserNameModal  extends Component {
         }
     }
 
+    onEditFullNameType = (e) => {
+        this.setState({
+            typedFullname: e.target.value
+        })
+    }
+
+    
     render() {
         return (
                 <Modal

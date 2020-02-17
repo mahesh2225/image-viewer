@@ -1,14 +1,15 @@
 .modal-div {
-    position: absolute;
+    inline-size: fit-content;
     top: 50%;
-    left: 50%;
+    border-radius: .3rem;
     transform: translate(-50%, -50%);
-    padding: 15px;
+    left: 50%;
     background-color: white;
     border: 1px solid rgba(0,0,0,.2);
-    border-radius: .3rem;
+    padding: 15px;
     box-shadow: black;
-    inline-size: fit-content;
+    position: absolute;
+    
 }
 
 .add-button-grid {
@@ -16,26 +17,28 @@
     inline-size: fit-content;
 }
 
-.add-button {
-    vertical-align: bottom;
-    inline-size: fit-content;
-}
 
-.MuiGrid-spacing-xs-3 > .MuiGrid-item {
-    align-self: flex-end;
-    inline-size: fit-content;
-}
+
+
 
 .MuiGrid-spacing-xs-2 > .MuiGrid-item {
     align-self: flex-start;
     inline-size: fit-content;
 }
-
 .MuiGrid-grid-xs-6 {
     height: 70%;
     width: 70%;
 }
+.MuiGrid-spacing-xs-3 > .MuiGrid-item {
+    align-self: flex-end;
+    inline-size: fit-content;
+}
 
+
+.add-button {
+    vertical-align: bottom;
+    inline-size: fit-content;
+}
 .comment-section {
     min-height: 150px;
 }

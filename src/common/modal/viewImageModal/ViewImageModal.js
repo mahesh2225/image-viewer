@@ -23,15 +23,8 @@ class ViewImageModal extends Component {
             comments: []
         }
     }
-    onlikeMedia = () => {
-        let index = this.props.imageIndex;
-        let l = this.state.liked;
-        l[index] = !l[index];
-        this.setState({
-            liked: l,
-        })
-    }
 
+//Adding comments to the modal   
     onAddComment = () => {
         let index = this.props.imageIndex;
         var textbox = document.getElementById("add-user-comment-image");
@@ -49,6 +42,17 @@ class ViewImageModal extends Component {
         })
         textbox.value = '';
     }
+
+    //Likes adding and removing
+    onlikeMedia = () => {
+        let index = this.props.imageIndex;
+        let l = this.state.liked;
+        l[index] = !l[index];
+        this.setState({
+            liked: l,
+        })
+    }
+
 
     render() {
         let mediaObj = this.props.imageViewMediaObject;
