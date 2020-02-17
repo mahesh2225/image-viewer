@@ -27,15 +27,8 @@ class MediaCard extends Component {
             comments: []
         }
     }
-    onlikeMedia = (index) => {
-        console.log(index);
-        let l = this.state.liked; 
-        l[index] = !l[index];
-        this.setState({
-            liked: l,
-        })   
-    }
 
+    //Adding Comments 
     onAddComment = (index) => {
         var textbox = document.getElementById("textfield-"+index);
         if( textbox.value == null || textbox.value.trim() === "" ) {
@@ -52,10 +45,21 @@ class MediaCard extends Component {
         }) 
         textbox.value = '';
     }
+
+//Addind Like Comment
+    onlikeMedia = (index) => {
+        console.log(index);
+        let l = this.state.liked; 
+        l[index] = !l[index];
+        this.setState({
+            liked: l,
+        })   
+    }
+
+   
     
 
-    render() {
-    // const { classes } = this.props;
+    render() {   
     return (
             <Grid container spacing={2} direction="row" justify="flex-start" alignItems="center" >
                 { this.props.userMediaData && this.props.userMediaData.map((mediaObj, index) => 

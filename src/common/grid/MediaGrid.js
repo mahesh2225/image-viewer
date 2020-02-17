@@ -15,18 +15,19 @@ class MediaGrid extends Component {
             index: null
         }
     }
-
+    onCloseImageViewModal = () => {
+      this.setState({openImageViewModal: false});
+      this.setState({imageViewMediaObject: null});
+      this.setState({index: -1});
+    }
+//Open Modal for image
     openModalHandler = (mediaObj, index) => {
       console.log(mediaObj);
       this.setState({imageViewMediaObject: mediaObj});
       this.setState({openImageViewModal: true});
       this.setState({index: index});
     }
-    onCloseImageViewModal = () => {
-      this.setState({openImageViewModal: false});
-      this.setState({imageViewMediaObject: null});
-      this.setState({index: -1});
-    }
+    
 
     render() {
         return (
